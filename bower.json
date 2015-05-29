@@ -4,6 +4,7 @@
   "dependencies": {
     "ionic": "~1.0.0",
     "lodash": "~3.8.0",
-    "restangular": "~1.5.1"
+    "restangular": "~1.5.1",
+    "ng-cordova-pingxx": "~0.1.0"
   }
 }
