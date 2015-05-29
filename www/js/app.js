@@ -4,7 +4,7 @@
   var app = angular.module('pingxx.ionic', ['ionic', 'restangular', 'ngCordova.plugins.pingxx']);
 
   app.constant('ApiEndpoint', {
-    api_url: 'http://10.246.40.125:8010'
+    api_url: 'http://YOUR-IP:8010'//TODO YOUR-IP like 192.168.10.10
   });
 
   app.run(function ($ionicPlatform) {
@@ -36,7 +36,8 @@
       }
 
       Restangular.all('').customPOST(data, 'pay').then(function(charge) {
-        pingxx.createPayment(charge, 'pingxxionic');
+        cordovaPingxx.createPayment(charge, 'YOUR-URL-SCHEME');//TODO YOUR-URL-SCHEME is what in this command you hava specified
+                                                          // $cordova plugin add ../cordova-plugin-pingxx/ --variable URL_SCHEME=YOUR-URL-SCHEME
       }, function(error) {
         $ionicPopup.alert({
           title: '网络错误',
